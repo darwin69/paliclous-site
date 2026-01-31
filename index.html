@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paliclous - Cordonnerie artisanale</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo Paliclous">
+    </div>
+    <div class="option">
+        <button data-page="accueil">Accueil</button>
+        <button data-page="apropos">À propos</button>
+        <button data-page="services">Services</button>
+        <button data-page="contact">Contact</button>
+    </div>
+</nav>
+
+<div id="content"></div>
+<footer>
+    <img src="images/artisan.jfif" class="artisan">
+</footer>
+<script>
+const content = document.getElementById("content");
+
+const pages = {
+    accueil: `
+        <h1 class="titre">
+            Cordonnerie artisanale – Réparation et entretien du cuir
+        </h1>
+
+        <p class="texte">
+            Depuis près de 10 ans, la cordonnerie artisanale <strong>Paliclous</strong>
+            met son savoir-faire au service de vos chaussures, sacs et articles en cuir.
+            Réparer plutôt que jeter : un choix économique et durable.
+        </p>
+
+        <div class="points-forts">
+            <div class="point">✔ Travail artisanal soigné</div>
+            <div class="point">✔ Délais rapides</div>
+            <div class="point">✔ Produits de qualité</div>
+        </div>
+
+        <p class="phrase">
+            Vos chaussures préférées méritent une seconde vie.
+        </p>
+        <button class="aaa" data-page="services">
+            Découvrir nos services
+        </button>
+    `,
+
+    apropos: `
+        <h1 class="titre">À propos</h1>
+
+        <p class="texte">
+            La cordonnerie <strong>Paliclous</strong> est avant tout une histoire de passion
+            et d’amour du travail bien fait. Depuis près de 10 ans, chaque réparation
+            est réalisée avec soin et précision.
+        </p>
+
+        <p class="texte">
+            Derrière Paliclous, un artisan proche de ses clients, attentif aux détails
+            et soucieux de prolonger la durée de vie de vos chaussures et articles en cuir.
+        </p>
+
+        <div class="valeurs">
+            <h2>Nos valeurs</h2>
+            <ul>
+                <li>Qualité et savoir-faire artisanal</li>
+                <li>Durabilité et respect des matériaux</li>
+                <li>Conseils honnêtes et personnalisés</li>
+                <li>Proximité avec nos clients</li>
+            </ul>
+        </div>
+
+        <button class="aaa" data-page="contact">
+            Nous contacter
+        </button>
+    `,
+
+    services: `
+        <h1 class="titre">Nos services</h1>
+
+        <p class="texte">
+            Nous réalisons tous types de réparations et d’entretiens
+            sur le cuir et autres matières.
+        </p>
+
+        <div class="services">
+            <div class="service">
+                <p><strong>Réparation de chaussures</strong><br>
+                Semelles, talons, coutures</p>
+            </div>
+
+            <div class="service">
+                <p><strong>Garnissage</strong><br>
+                Banquette, siège</p>
+            </div>
+
+            <div class="service">
+                <p><strong>Sacs et accessoires</strong><br>
+                Sacs, ceintures, portefeuilles</p>
+            </div>
+
+            <div class="service">
+                <p><strong>Vente de cuir</strong><br>
+                multiples choix sur place</p>
+            </div>
+        </div>
+    `,
+
+    contact: `
+        <h1 class="titre">Contact</h1>
+
+        <div class="boite">
+            <p><strong>Téléphone</strong></p>
+            <p>0473 50 12 11</p>
+        </div>
+
+        <div class="boite">
+            <p><strong>Email</strong></p>
+            <p>philoudupali@gmail.com</p>
+        </div>
+
+        <div class="boite">
+            <p><strong>Adresse</strong></p>
+            <p>Rue de Bouillon 7, 6850 Paliseul</p>
+        </div>
+
+        <div class="boite">
+            <p><strong>Facebook</strong></p>
+            <p>
+                <a href="https://www.facebook.com/p/Pali-Clous-100063857191061/" style="color:black">
+                    Paliclous
+                </a>
+            </p>
+        </div>
+    `
+};
+
+document.addEventListener("click", (e) => {
+    if (e.target.matches("button[data-page]")) {
+        content.innerHTML = pages[e.target.dataset.page];
+    }
+});
+
+content.innerHTML = pages.accueil;
+</script>
+
+</body>
+</html>
