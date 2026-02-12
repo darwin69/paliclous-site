@@ -145,6 +145,7 @@ nav {
 }
 .service:nth-child(3):hover{
     background-image: url(images/accesoire.jpeg);
+    background-position: center;
 }
 .service:nth-child(4):hover{
     background-image: url(images/cuir.PNG);
@@ -173,5 +174,6 @@ footer p{
     margin-top: -3%;
     padding-left: 10px;
 }
+
 
 
